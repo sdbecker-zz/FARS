@@ -1,2 +1,2 @@
 # FARS
-Package development:  Coursera
+Package development:  Coursera Module
