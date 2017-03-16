@@ -11,11 +11,6 @@ fars_read(filename)
 }
 \value{
 A tbl_df data structure with contents of the given file.
-
-\dontrun{
- ## The argument must be a character vector. The following will not work.
- fars_read(data/fname.csv)
- }
 }
 \description{
 \code{fars_read} returns a data structure with data read from a given file.

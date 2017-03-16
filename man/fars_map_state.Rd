@@ -16,12 +16,6 @@ interest.}
 \value{
 Outputs an outline of the state with points representing
 the accidents that occured during the given year in that state.
-
-\dontrun{
-## The following won't work as the year argument must be an element
-## that can be converted into an integer.
-fars_map_state(1, 2/3/2011)
-}
 }
 \description{
 \code{fars_map_state} plots the outline of a state given as an integer

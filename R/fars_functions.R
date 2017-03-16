@@ -16,12 +16,6 @@
 #'@param filename An atomic character vector holding the path name of the file.
 #'
 #'@return A tbl_df data structure with contents of the given file.
-#'
-#'\dontrun{
-#'  ## The argument must be a character vector. The following will not work.
-#'  fars_read(data/fname.csv)
-#'  }
-
 fars_read <- function(filename) {
         if(!file.exists(filename))
                 stop("file '", filename, "' does not exist")
@@ -46,10 +40,6 @@ fars_read <- function(filename) {
 #' augment to the file name.
 #'
 #'@return An atomic character vector representing the file name.
-#'
-#'\dontrun{
-#'     make_filename("2/2/2015")
-#'  }
 make_filename <- function(year) {
         year <- as.integer(year)
         sprintf("accident_%d.csv.bz2", year)
@@ -75,13 +65,6 @@ make_filename <- function(year) {
 #'
 #'@return A list of data frames containing the filtered data frames
 #' for each year in the argument vector/list.
-#'
-#'\dontrun{
-#' ## The following won't work as the vector must have elements
-#' ## that can be converted into integers.
-#' fars_read_years(c(2/3/2011, 3/4/2012, 2/4/2013))
-#'}
-
 fars_read_years <- function(years) {
         lapply(years, function(year) {
                 file <- make_filename(year)
@@ -114,12 +97,6 @@ fars_read_years <- function(years) {
 #'
 #'@return A data frame with the number of accidents per month
 #'over the years.
-#'
-#'\dontrun{
-#' ## The following won't work as the vector must have elements
-#' ## that can be converted into integers.
-#' fars_summarize_years(c(2/3/2011, 3/4/2012, 2/4/2013))
-#'}
 #'@export
 fars_summarize_years <- function(years) {
         dat_list <- fars_read_years(years)
@@ -153,12 +130,6 @@ fars_summarize_years <- function(years) {
 #'
 #'@return Outputs an outline of the state with points representing
 #' the accidents that occured during the given year in that state.
-#'
-#'\dontrun{
-#' ## The following won't work as the year argument must be an element
-#' ## that can be converted into an integer.
-#' fars_map_state(1, 2/3/2011)
-#'}
 #'@export
 fars_map_state <- function(state.num, year) {
         filename <- make_filename(year)

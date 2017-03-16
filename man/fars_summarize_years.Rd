@@ -13,12 +13,6 @@ into integers.}
 \value{
 A data frame with the number of accidents per month
 over the years.
-
-\dontrun{
-## The following won't work as the vector must have elements
-## that can be converted into integers.
-fars_summarize_years(c(2/3/2011, 3/4/2012, 2/4/2013))
-}
 }
 \description{
 \code{fars_summarize_years} cycles through a vector of years and reads data
