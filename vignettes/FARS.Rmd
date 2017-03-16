@@ -1,0 +1,63 @@
+---
+title: "FARS Functions"
+author: "Steven Becker"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using the functions in the FARS package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+This package contains two user functions that may be applied to data made
+available by the US National Highway Traffic Safety Administration's 
+Fatality Analysis Reporting System (FARS).
+
+The two functions in question:
+
+- fars_summarize_years()
+- fars_map_state()
+
+**fars_summarize_years** collates the data into a table with years as column
+names and each line item represents the month of that year. The data shown
+is the aggregated fatalities recorded in for that month.
+
+**fars_map_state** outlines a map of a particular state with small dots
+printed within the outline of the state, each dot representing where a fatal
+accident occurred.
+
+
+## Required data for the functions
+
+In order to use these functions the data with the required file format must
+be downloaded and placed in your working directory. It is important to place
+the data files in the working directory as the package references the current
+working directory when looking for the files.
+
+
+## Using the functions
+
+The following are examples of how to use the **fars_summarize_years** function:
+
+`fars_summarize_years(c(2013, 2014, 2015))`
+
+`fars_summarize_years(c("2013", "2014", "2015"))`
+
+Note the input is a numerical or character vector of years. The output, as
+explained, will be a table of aggregated fatalities per month.
+
+The following are examples of how to use the **fars_map_state** function:
+
+`fars_map_state(1, 2013)`
+
+`fars_map_state(1, "2013")`
+
+Note the inputs into the function, the first is a numeric value that refers to
+the state number. The second is the year. The output will be an outline of the
+state for that year with dots representing where the fatalities occurred.
+
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))

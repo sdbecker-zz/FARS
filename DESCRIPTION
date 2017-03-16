@@ -15,4 +15,7 @@ Imports: readr,
     tidyr,
     maps,
     magrittr
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
