@@ -14,8 +14,14 @@ USA of interest.}
 interest.}
 }
 \value{
-Outputs an outline of the state with points representing the
-accidents that occured during the given year in that state.
+Outputs an outline of the state with points representing
+the accidents that occured during the given year in that state.
+
+\dontrun{
+## The following won't work as the year argument must be an element
+## that can be converted into an integer.
+fars_map_state(1, 2/3/2011)
+}
 }
 \description{
 \code{fars_map_state} plots the outline of a state given as an integer
@@ -34,13 +40,3 @@ maps::map; note that graphics::points is part of the base graphics
 and does not need to be imported.
 }
 
-\examples{
-fars_map_state(1, 2013)
-fars_map_state(1, "2013")
-
-\dontrun{
-## The following won't work as the year argument must be an element
-## that can be converted into an integer.
-fars_map_state(1, 2/3/2011)
-}
-}

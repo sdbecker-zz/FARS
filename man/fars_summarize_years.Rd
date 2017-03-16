@@ -11,7 +11,14 @@ fars_summarize_years(years)
 into integers.}
 }
 \value{
-A data frame with the number of accidents per month over the years.
+A data frame with the number of accidents per month
+over the years.
+
+\dontrun{
+## The following won't work as the vector must have elements
+## that can be converted into integers.
+fars_summarize_years(c(2/3/2011, 3/4/2012, 2/4/2013))
+}
 }
 \description{
 \code{fars_summarize_years} cycles through a vector of years and reads data
@@ -27,13 +34,3 @@ of accidents calculate per month. The result is then formatted into a table.
 dplyr::bind; dplyr::group_by; dplyr::summarize; tidyr:: spread
 }
 
-\examples{
-fars_summarize_years(c(2013, 2014, 2015))
-fars_summarize_years(c("2013", "2014", "2015"))
-
-\dontrun{
-## The following won't work as the vector must have elements
-## that can be converted into integers.
-fars_summarize_years(c(2/3/2011, 3/4/2012, 2/4/2013))
-}
-}

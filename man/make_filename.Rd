@@ -12,6 +12,10 @@ augment to the file name.}
 }
 \value{
 An atomic character vector representing the file name.
+
+\dontrun{
+    make_filename("2/2/2015")
+ }
 }
 \description{
 \code{make_filename} completes a file name with an input year.
@@ -25,11 +29,3 @@ predefined template, and outputs a filename.
 None
 }
 
-\examples{
-make_filename("2015")
-make_filename(2015)
-
-\dontrun{
-    make_filename("2/2/2015")
- }
-}

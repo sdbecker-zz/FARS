@@ -17,12 +17,6 @@
 #'
 #'@return A tbl_df data structure with contents of the given file.
 #'
-#'@examples
-#' fars_read("data/fname.csv")
-#'
-#' fname <- "data/fname.csv"
-#' fars_read(fname)
-#'
 #'\dontrun{
 #'  ## The argument must be a character vector. The following will not work.
 #'  fars_read(data/fname.csv)
@@ -53,10 +47,6 @@ fars_read <- function(filename) {
 #'
 #'@return An atomic character vector representing the file name.
 #'
-#'@examples
-#' make_filename("2015")
-#' make_filename(2015)
-#'
 #'\dontrun{
 #'     make_filename("2/2/2015")
 #'  }
@@ -83,12 +73,8 @@ make_filename <- function(year) {
 #'@param years A character/numeric vector of years that can be converted
 #' into integers.
 #'
-#'@return A list of data frames containing the filtered data frames for each
-#'year in the argument vector/list.
-#'
-#'@examples
-#' fars_read_years(c(2011, 2012, 2013))
-#' fars_read_years(c("2011", "2012", "2013"))
+#'@return A list of data frames containing the filtered data frames
+#' for each year in the argument vector/list.
 #'
 #'\dontrun{
 #' ## The following won't work as the vector must have elements
@@ -126,11 +112,8 @@ fars_read_years <- function(years) {
 #'@param years A character/numeric vector of years that can be converted
 #' into integers.
 #'
-#'@return A data frame with the number of accidents per month over the years.
-#'
-#'@examples
-#' fars_summarize_years(c(2013, 2014, 2015))
-#' fars_summarize_years(c("2013", "2014", "2015"))
+#'@return A data frame with the number of accidents per month
+#'over the years.
 #'
 #'\dontrun{
 #' ## The following won't work as the vector must have elements
@@ -168,12 +151,8 @@ fars_summarize_years <- function(years) {
 #'@param year An atomic character or numeric vector representing the year of
 #'interest.
 #'
-#'@return Outputs an outline of the state with points representing the
-#'accidents that occured during the given year in that state.
-#'
-#'@examples
-#' fars_map_state(1, 2013)
-#' fars_map_state(1, "2013")
+#'@return Outputs an outline of the state with points representing
+#' the accidents that occured during the given year in that state.
 #'
 #'\dontrun{
 #' ## The following won't work as the year argument must be an element

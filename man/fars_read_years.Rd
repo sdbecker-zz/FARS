@@ -11,8 +11,14 @@ fars_read_years(years)
 into integers.}
 }
 \value{
-A list of data frames containing the filtered data frames for each
-year in the argument vector/list.
+A list of data frames containing the filtered data frames
+for each year in the argument vector/list.
+
+\dontrun{
+## The following won't work as the vector must have elements
+## that can be converted into integers.
+fars_read_years(c(2/3/2011, 3/4/2012, 2/4/2013))
+}
 }
 \description{
 \code{fars_read_years} cycles through a vector of years and outputs a list
@@ -29,13 +35,3 @@ which in this case would be a character/numeric vector/list of years.
 dplyr::mutate
 }
 
-\examples{
-fars_read_years(c(2011, 2012, 2013))
-fars_read_years(c("2011", "2012", "2013"))
-
-\dontrun{
-## The following won't work as the vector must have elements
-## that can be converted into integers.
-fars_read_years(c(2/3/2011, 3/4/2012, 2/4/2013))
-}
-}
